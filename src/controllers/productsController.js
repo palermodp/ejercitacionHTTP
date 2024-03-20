@@ -24,7 +24,9 @@ const controller = {
 
   // Update - Form to edit
   edit: (req, res) => {
-    res.render("product-edit-form");
+    res.render("product-edit-form", {
+      products: productService.getOne(req.params.id),
+    });
   },
   // Update - Method to update
   update: (req, res) => {
@@ -33,7 +35,8 @@ const controller = {
 
   // Delete - Delete one product from DB
   destroy: (req, res) => {
-    // Do the magic
+    // let deleteId = parseInt(req.params.id);
+    // products = products.filter((product) => product.id != deleteId);
   },
 };
 

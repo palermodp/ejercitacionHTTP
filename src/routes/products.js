@@ -13,13 +13,13 @@ router.get("/create/", productsController.create);
 router.post("/", productsController.store);
 
 /*** GET ONE PRODUCT ***/
-router.get("/:id", productsController.detail);
+router.get("/:id/", productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/:id/edit", productsController.edit);
 router.put("/:id", productsController.update);
 
 /*** DELETE ONE PRODUCT***/
-// router.delete('/:id', productsController.destroy);
+// router.delete("/:id", productsController.destroy);
 
 module.exports = router;
