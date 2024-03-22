@@ -1,7 +1,7 @@
 // ************ Require's ************
 const express = require("express");
 const router = express.Router();
-
+const multer = require("multer");
 // ************ Controller Require ************
 const productsController = require("../controllers/productsController");
 
@@ -17,9 +17,9 @@ router.get("/:id/", productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get("/:id/edit", productsController.edit);
-router.put("/:id", productsController.update);
+router.put("/edit", productsController.update);
 
 /*** DELETE ONE PRODUCT***/
-// router.delete("/:id", productsController.destroy);
+router.delete("/delete/:id", productsController.destroy);
 
 module.exports = router;

@@ -14,6 +14,12 @@ let productService = {
   getOne: function (id) {
     return this.products.find((product) => product.id == id);
   },
+  indexVisited: function () {
+    return this.products.filter((product) => product.category == "visited");
+  },
+  indexOfer: function () {
+    return this.products.filter((product) => product.category == "in-sale");
+  },
 };
 
 module.exports = productService;

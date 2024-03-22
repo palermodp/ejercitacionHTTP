@@ -30,13 +30,12 @@ const controller = {
   },
   // Update - Method to update
   update: (req, res) => {
-    // Do the magic
+    res.send("asdasd");
   },
 
   // Delete - Delete one product from DB
   destroy: (req, res) => {
-    // let deleteId = parseInt(req.params.id);
-    // products = products.filter((product) => product.id != deleteId);
+    res.send("hola");
   },
 };
 
