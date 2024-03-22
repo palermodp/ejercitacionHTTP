@@ -17,9 +17,6 @@ let productService = {
   indexVisited: function () {
     return this.products.filter((product) => product.category == "visited");
   },
-  indexOfer: function () {
-    return this.products.filter((product) => product.category == "in-sale");
-  },
 };
 
 module.exports = productService;
