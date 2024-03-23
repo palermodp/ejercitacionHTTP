@@ -14,8 +14,22 @@ let productService = {
   getOne: function (id) {
     return this.products.find((product) => product.id == id);
   },
-  indexVisited: function () {
-    return this.products.filter((product) => product.category == "visited");
+  buscarPorCategoria: function (category) {
+    return this.products.filter((product) => product.category == category);
+  },
+  mostrarPorCategoria: function (category1, category2) {
+    return {
+      visitados: this.buscarPorCategoria(category1),
+      ofertas: this.buscarPorCategoria(category2),
+    };
+  },
+  eliminarProducto: function (id) {
+    let filteredElements = this.products.filter((product) => product.id != id);
+    fs.writeFileSync(
+      productsFilePath,
+      JSON.stringify(filteredElements),
+      "utf-8"
+    );
   },
 };
 
